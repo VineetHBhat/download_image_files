@@ -10,6 +10,6 @@ This program is developed using TDD (Test Driven Development) approach to downlo
     1. `extract_image_names(self, url_list, extract_name_regex)`: This method takes a URL list (returned by `read_url_file()`) and returns a list with image names. The image names are extracted from the URL. You may need to pass a modified `extract_name_regex` variable to use this with other URL's.
     1. `download_from_url(self, url_list, image_name_list, download_dir_path)`: This method does the actual task of downloading and saving the images from the web.
     1. `download_files.py` also provides a classmethod named `download_single_image(cls, image, url)` which is used by `download_from_url()`.
-1. `test_download_files.py` defines test-cases for all 3 methods defined in `download_files.py`. Three different *instance variabes* have been created to test the 3 methods, but this is not necessary and a single *instance variabe* can also be used.
+1. `test_download_files.py` defines test-cases for all 3 methods defined in `download_files.py`. Three different *instances* have been created to test the 3 methods, but this is not necessary and a single *instance* can also be used.
 
 *This program needs refactoring. I will be working on it from time to time. Meanwhile any suggestion are appreciated.*
