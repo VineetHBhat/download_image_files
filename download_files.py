@@ -75,7 +75,9 @@ class Download_files:
                     response.raise_for_status()
 
                 except Exception:
-                    print("{url} generated an Exception.\nDetails:\n{Exception}")
+                    print("###################################################")
+                    print("An exception was generated while downloading {image}.\nDetails:\n{Exception}")
+                    print("###################################################")
 
                 else:
                     print("===================================================")
