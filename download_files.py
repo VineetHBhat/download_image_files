@@ -77,7 +77,7 @@ class Download_files:
 
                 except Exception:
                     print("\n###################################################")
-                    print("An exception was generated while downloading {image}.\nDetails:\n{Exception}")
+                    print("An exception was encountered while downloading {image}.\nDetails:\n{Exception}")
                     print("###################################################")
 
                 else:
