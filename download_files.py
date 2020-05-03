@@ -2,6 +2,7 @@ import requests
 import concurrent.futures
 import re
 
+
 class Download_files:
     '''
     This class provides methods to read a list of urls from a file and then
@@ -65,31 +66,36 @@ class Download_files:
 
         with concurrent.futures.ThreadPoolExecutor() as executor:
 
-            futures = [executor.submit(Download_files.download_single_image, image, url)\
-                            for (image, url) in zip(image_name_list, url_list)]
+            futures = [executor.submit(Download_files.download_single_image,
+                                       image, url) for (image, url) in
+                       zip(image_name_list, url_list)]
 
-            for (future,image) in zip(concurrent.futures.as_completed(futures), image_name_list):
+            for (future, image) in zip(concurrent.futures.
+                                       as_completed(futures), image_name_list):
 
                 try:
                     response = future.result()
                     response.raise_for_status()
 
                 except Exception:
-                    print("\n###################################################")
-                    print("An exception was encountered while downloading {image}.\nDetails:\n{Exception}")
-                    print("###################################################")
+                    print("\n################################################")
+                    print("An exception was encountered while \
+                           downloading {image}.\nDetails:\n{Exception}")
+                    print("################################################")
 
                 else:
-                    print("\n===================================================")
+                    print("\n================================================")
                     print(f'Downloaded [{image}]')
 
-                    with open(f'{download_dir_path}/{image}', 'wb') as byte_img:
+                    with open(f'{download_dir_path}/{image}', 'wb') as\
+                            byte_img:
                         byte_img.write(response.content)
 
                     print(f'Saved in {download_dir_path}/')
-                    print("===================================================")
+                    print("================================================")
 
-                    self.downloaded_images.append(f'{download_dir_path}/{image}')
+                    self.downloaded_images.append(f'{download_dir_path}/\
+                                                  {image}')
 
         print("\n******************************")
         print("All downloads have completed.")
