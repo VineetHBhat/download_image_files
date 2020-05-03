@@ -18,7 +18,7 @@ class Download_files:
     def read_url_file(self, read_file_regex):
         '''
         This method reads the file containing the urls and return the urls in
-        the form of a list. You may need to modify the %reg_exp% variable.
+        the form of a list.
         '''
 
         self.url_list = []
@@ -39,8 +39,7 @@ class Download_files:
     def extract_image_names(self, url_list, extract_name_regex):
         '''
         This method takes a url list and returns a list with image names. The
-        image names are extracted from the url. You may need to modify the
-        %reg_exp% variable.
+        image names are extracted from the url.
         '''
 
         url_list_str = ""
